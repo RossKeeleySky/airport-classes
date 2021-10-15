@@ -48,6 +48,8 @@ plane1.boardPassenger(passenger1);
 plane1.boardPassenger(passenger2);
 plane1.boardPassenger(passenger4);
 console.log(plane1);
+plane1.disembarkPassengerByName("John");
+console.log(plane1);
 
 const plane2 = new Plane("aer lingus", "UK12345", 2, 2);
 plane2.boardCrew(crew2);
@@ -68,7 +70,6 @@ plane1.boardPassenger(passenger1);
 plane1.boardPassenger(passenger2);
 plane1.boardPassenger(passenger4);
 console.log(JSON.stringify(airport1));
-
 
 
 module.exports = { Bag, Passenger, CrewMember, Plane, Airport };

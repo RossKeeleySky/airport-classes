@@ -29,8 +29,7 @@ class Plane {
     }
     // disembark specific passenger by their name attribute
     disembarkPassengerByName(passengerName) {
-        let index = this.passengers.map((passenger) => { return passenger.name; }).indexOf(passengerName);
-        this.passengers.splice(index, 1);
+        this.passengers.filter((passenger) => passenger.name == passengerName);
     }
     // performed automatically when plane lands at airport
     disembarkAll() {

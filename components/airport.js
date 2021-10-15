@@ -1,4 +1,6 @@
 class Airport {
+    static airports = []
+
     constructor(name) {
         this.name = name;
         this.planes = []
@@ -8,8 +10,7 @@ class Airport {
         plane.disembarkAll();
     }
     planeTakeOff(planeFlightNum) {
-        let index = this.planes.map((plane) => { return plane.flightNum; }).indexOf(planeFlightNum);
-        this.planes.splice(index, 1);
+        this.planes.filter((plane) => plane.flightNum == planeFlightNum);
     }
 }
 
