@@ -1,0 +1,30 @@
+{
+  "name": "airport-classes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:report": "jest --coverage=true",
+    "watch": "npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RossKeeleySky/airport-classes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RossKeeleySky/airport-classes/issues"
+  },
+  "homepage": "https://github.com/RossKeeleySky/airport-classes#readme",
+  "dependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.5"
+  },
+  "typeAcquisition": {
+    "include": [
+      "jest"
+    ]
+  }
+}
