@@ -6,70 +6,80 @@ const Airport = require("./components/airport");
 
 
 // PASSENGERS
-const passenger1 = new Passenger("Jim", 12345, "FR12345", "01A");
+const jim = new Passenger("Jim", 12345, "FR12345", "01A");
 const p1bag1 = new Bag(20);
 const p1bag2 = new Bag(15);
-passenger1.addBag(p1bag1);
-passenger1.addBag(p1bag2);
-// console.log(passenger1);
+jim.addBag(p1bag1);
+jim.addBag(p1bag2);
+// console.log(jim);
 
-const passenger2 = new Passenger("John", 12345, "FR12345", "01B");
+const john = new Passenger("John", 12345, "FR12345", "01B");
 const p2bag1 = new Bag(20);
 const p2bag2 = new Bag(15);
-passenger2.addBag(p2bag1);
-passenger2.addBag(p2bag2);
-// console.log(passenger2);
+john.addBag(p2bag1);
+john.addBag(p2bag2);
+// console.log(john);
 
-const passenger3 = new Passenger("Julie", 12345, "UK12345", "01A");
+const julie = new Passenger("Julie", 12345, "UK12345", "01A");
 const p3bag1 = new Bag(20);
 const p3bag2 = new Bag(15);
-passenger3.addBag(p3bag1);
-passenger3.addBag(p3bag2);
-// console.log(passenger3);
+julie.addBag(p3bag1);
+julie.addBag(p3bag2);
+// console.log(julie);
 
-const passenger4 = new Passenger("Jenny", 12345, "FR12345", "01C");
+const jenny = new Passenger("Jenny", 12345, "FR12345", "01C");
 const p4bag1 = new Bag(20);
 const p4bag2 = new Bag(15);
-passenger4.addBag(p4bag1);
-passenger4.addBag(p4bag2);
-// console.log(passenger4);
+jenny.addBag(p4bag1);
+jenny.addBag(p4bag2);
+// console.log(jenny);
 
 // CREW
-const crew1 = new CrewMember("Tom", "pilot", 12345, "FR12345");
-const crew2 = new CrewMember("Julio", "pilot", 12345, "UK12345");
-const crew3 = new CrewMember("Dick", "steward", 12345, "FR12345");
-const crew4 = new CrewMember("Harry", "steward", 12345, "UK12345");
+const pilotTom = new CrewMember("Tom", "pilot", 12345, "FR12345");
+const pilotJulio = new CrewMember("Julio", "pilot", 12345, "UK12345");
+const stewardDick = new CrewMember("Dick", "steward", 12345, "FR12345");
+const stewardHarry = new CrewMember("Harry", "steward", 12345, "UK12345");
 
 // PLANES
 const plane1 = new Plane("ryanair", "FR12345", 2, 3);
-plane1.boardCrew(crew1);
-plane1.boardCrew(crew3);
-plane1.boardPassenger(passenger1);
-plane1.boardPassenger(passenger2);
-plane1.boardPassenger(passenger4);
+plane1.boardCrew(pilotTom);
+plane1.boardCrew(stewardDick);
+plane1.boardPassenger(jim);
+plane1.boardPassenger(john);
+plane1.boardPassenger(jenny);
 console.log(plane1);
 plane1.disembarkPassengerByName("John");
 console.log(plane1);
 
 const plane2 = new Plane("aer lingus", "UK12345", 2, 2);
-plane2.boardCrew(crew2);
-plane2.boardCrew(crew4);
-plane2.boardPassenger(passenger3);
+plane2.boardCrew(pilotJulio);
+plane2.boardCrew(stewardHarry);
+plane2.boardPassenger(julie);
 console.log(plane2);
 
 // AIRPORTS
-const airport1 = new Airport("heathrow");
+const heathrow = new Airport("heathrow");
 // When plane lands, all passengers and crew automatically disembark
-airport1.planeLand(plane1);
-console.log(airport1);
+heathrow.planeLand(plane1);
+console.log(heathrow);
 
 // plane is boarded again
-plane1.boardCrew(crew1);
-plane1.boardCrew(crew3);
-plane1.boardPassenger(passenger1);
-plane1.boardPassenger(passenger2);
-plane1.boardPassenger(passenger4);
-console.log(JSON.stringify(airport1));
+plane1.boardCrew(pilotTom);
+plane1.boardCrew(stewardDick);
+plane1.boardPassenger(jim);
+plane1.boardPassenger(john);
+plane1.boardPassenger(jenny);
+console.log(heathrow);
+console.log(JSON.stringify(heathrow));
+
+const dublin = new Airport("Dublin");
+dublin.planeLand(plane2);
+// plane is boarded
+plane2.boardCrew(pilotJulio);
+plane2.boardCrew(stewardHarry);
+plane2.boardPassenger(julie);
+console.log(dublin);
+console.log(JSON.stringify(dublin));
 
 
 module.exports = { Bag, Passenger, CrewMember, Plane, Airport };
