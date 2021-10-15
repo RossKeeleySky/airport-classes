@@ -15,8 +15,4 @@ class Airport {
     }
 }
 
-// this.planes = this.planes.filter(
-//     (planeElement) => planeElement.planeID != plane.planeID
-//   );
-
 module.exports = Airport;
